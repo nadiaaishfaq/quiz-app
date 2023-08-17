@@ -25,7 +25,8 @@ app.use('/api', router)  //apis
 
 app.get('/', (req,res) => {
     try {
-        res.json("Get Request")
+        console.log(hello)
+        res.json({ message: 'Server is connected and responding with a JSON response.' });
     } catch (error) {
         res.json(error)
     }
@@ -36,7 +37,7 @@ app.get('/', (req,res) => {
 connect().then(()=>{
     try {
         app.listen(port, ()=>{
-            console.log(`server connected to http://localhost:${port}`)
+            console.log(`server connected to ${port}`)
         })
     } catch (error) {
         console.log("Cannot connect to server")
