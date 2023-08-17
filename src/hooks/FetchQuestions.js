@@ -22,8 +22,8 @@ export const useFetchQuestions = () => {
       try {
 
         const [{ questions, answers}] = await getServerData(
-        //   `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`
-          "http://localhost:5000/api/questions",
+          `${process.env.REACT_APP_BASE_URL}/api/questions`,
+          // "https://quiz-app-six-rouge.vercel.app/api/questions",
           (data) => data
         );
         console.log({ questions, answers});
